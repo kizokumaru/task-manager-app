@@ -1,48 +1,66 @@
-# Funcionalidades Clave:
-## Gestión de equipos y usuarios:
-Diseña una interfaz para crear equipos y usuarios asociados. Usa formularios simples en HTML para capturar la información.
+# Task Manager App
 
-## Listas de tareas:
-Crea un sistema para que los usuarios añadan tareas, seleccionen usuarios o equipos asignados, y definan alarmas.
+## Descripción
+Task Manager App es una aplicación de gestión de tareas desarrollada con Electron. Permite a los usuarios crear, asignar y gestionar tareas de manera eficiente.
 
-## Estado de tareas:
-Implementa botones o casillas de verificación para marcar tareas como "pendientes" o "finalizadas".
+## Funcionalidades Clave
+### Gestión de equipos y usuarios
+- Diseña una interfaz para crear equipos y usuarios asociados. Usa formularios simples en HTML para capturar la información.
 
-## Asignación de supervisores y valoración:
-Agrega una opción para asignar un supervisor a cada tarea. Permite que los supervisores valoren las tareas con los tres niveles definidos: "necesita mejorar", "correcta", "bien".
+### Listas de tareas
+- Crea un sistema para que los usuarios añadan tareas, seleccionen usuarios o equipos asignados, y definan alarmas.
 
-## Generación de informes:
-Usa una biblioteca como Chart.js para generar gráficos o tablas con las tareas completadas y sus valoraciones. Ofrece opciones de filtrado por día, semana, quincena, o mes.
+### Estado de tareas
+- Implementa botones o casillas de verificación para marcar tareas como "pendientes" o "finalizadas".
 
- Adaptación para Android:
-PWA o framework adicional:
-Convierte tu aplicación en una PWA o usa un framework como Ionic o React Native para empaquetarla como una aplicación nativa de Android.
-5. Automatización y CI/CD:
-Configura GitHub Actions:
+### Asignación de supervisores y valoración
+- Agrega una opción para asignar un supervisor a cada tarea. Permite que los supervisores valoren las tareas con los tres niveles definidos: "necesita mejorar", "correcta", "bien".
 
-Crea un archivo .github/workflows/main.yml para automatizar la construcción y las pruebas de tu aplicación.
-Ejemplo de configuración:
+### Generación de informes
+- Usa una biblioteca como Chart.js para generar gráficos o tablas con las tareas completadas y sus valoraciones. Ofrece opciones de filtrado por día, semana, quincena, o mes.
 
-yaml
-Copiar código
-name: Build and Deploy
+## Instalación
+1. Clona el repositorio:
+    ```sh
+    git clone <URL_DEL_REPOSITORIO>
+    ```
+2. Navega al directorio del proyecto:
+    ```sh
+    cd task-manager-app
+    ```
+3. Instala las dependencias:
+    ```sh
+    npm install
+    ```
 
-on: [push, pull_request]
+## Uso
+- Para iniciar la aplicación, ejecuta:
+    ```sh
+    npm start
+    ```
 
-jobs:
-  build:
-    runs-on: ubuntu-latest
+- Para ejecutar las pruebas, usa:
+    ```sh
+    npm test
+    ```
 
-    steps:
-    - uses: actions/checkout@v2
-    - name: Set up Node.js
-      uses: actions/setup-node@v2
-      with:
-        node-version: '14'
-    - run: npm install
-    - run: npm run build
-    - run: npm test
-6. Seguridad y Mejores Prácticas:
-Deshabilita Node.js en WebViews para seguridad.
-Valida y sanitiza todo el contenido dinámico.
-Con estos pasos, tendrás un proyecto bien estructurado y preparado para ser desarrollado de manera eficiente y segura.
+## Estructura del Proyecto
+- `src/`: Contiene el código fuente de la aplicación.
+  - `assets/`: Archivos estáticos como imágenes y fuentes.
+  - `components/`: Componentes reutilizables de la interfaz.
+  - `css/`: Archivos de estilos CSS.
+  - `database/`: Archivos relacionados con la base de datos.
+  - `js/`: Archivos JavaScript.
+    - `main.js`: Archivo principal de la aplicación Electron.
+    - `renderer.js`: Archivo JavaScript para la renderización en el navegador.
+    - `tasks.js`: Lógica de gestión de tareas.
+  - `views/`: Archivos HTML.
+    - `index.html`: Página principal de la aplicación.
+    - `task-list.html`: Página de lista de tareas.
+
+- `test/`: Contiene las pruebas del proyecto.
+  - `js/`: Pruebas JavaScript.
+    - `tasks.test.js`: Pruebas para la lógica de gestión de tareas.
+
+## Licencia
+Este proyecto está licenciado bajo la Licencia ISC.
