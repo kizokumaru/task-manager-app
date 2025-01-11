@@ -1,0 +1,28 @@
+# Dependencias de Node.js
+node_modules/
+
+# Archivos de construcción y distribución de Electron
+dist/
+build/
+
+# Archivos generados por herramientas de empaquetado o transpilación
+*.log
+*.log.*
+coverage/
+
+# Archivos de entorno
+.env
+
+# Archivos de configuración local de IDEs
+.vscode/
+.idea/
+.sublime-workspace
+.sublime-project
+
+# Archivos específicos del sistema operativo
+.DS_Store
+Thumbs.db
+
+# Bases de datos
+database.sqlite
+*.db
